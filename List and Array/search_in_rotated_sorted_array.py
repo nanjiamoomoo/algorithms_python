@@ -35,8 +35,7 @@ class Solution:
     def search_in_rotated_sorted_array(self, nums: list, target:int) -> int:
         
         #use binary search, the array can be divided into left ascending and right ascending
-        """
-            
+        """            
             1. mid == target return
             2. mid >= left: mid falls under the left ascending sequence
                 2.1 mid < target: left = mid + 1
