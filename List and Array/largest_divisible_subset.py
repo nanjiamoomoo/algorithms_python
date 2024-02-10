@@ -33,16 +33,11 @@ class Solution:
 
         #sort first
         nums.sort()
-        lds = []
-
-        for x in nums:
-            lds.append([x])
-        
-        print(lds[0])
-        max = 0
+        lds = [[x] for x in nums] #list comprehension
+        max = 0 #the global max index position
         for i in range(1, len(nums)):
             curr = -1 # default value
-            for j in range(0, i):
+            for j in range(i):
                 if nums[i] % nums[j] == 0 and (curr == -1 or len(lds[j]) > len(lds[curr])):
                     curr = j
             if curr != -1:
