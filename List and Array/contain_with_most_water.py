@@ -28,7 +28,7 @@ n == height.length
 0 <= height[i] <= 104
 """
 class Solution:
-    def maxArea(self, height: List[int]) -> int:
+    def maxArea(self, height: list) -> int:
         #use two pointers travel towards each other, always move the smaller one
 
         n=len(height) 
@@ -42,7 +42,6 @@ class Solution:
         while l<r: 
             #storing max area of water in res for every iteration
             res=max(res,(r-l)*min(height[l],height[r])) 
-
             #updating the smallest vertical line hoping 
             #there would be a bigger vertical line after updation.
             if height[l]<height[r]: 
