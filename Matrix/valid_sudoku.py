@@ -49,9 +49,9 @@ board[i][j] is a digit 1-9 or '.'.
 
 class Solution:
     def is_valid_sudoku(self, board: list[list[int]]) -> bool:
-        #shortest solution:
+       
         """
-        
+        Shortest Solution:
         1)It initializes an empty list called "res", which will be used to store all the valid elements in the board.
 
         2)It loops through each cell in the board using two nested "for" loops.
