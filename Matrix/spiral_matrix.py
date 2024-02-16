@@ -32,17 +32,17 @@ class Solution:
 
         res = []
         while len(res) < m * n:
-            for x in range(left, right + 1):
+            for x in range(left, right + 1): #print top
                 res.append(matrix[top][x])
             top += 1
-            for x in range(top, bottom + 1):
+            for x in range(top, bottom + 1): # print right
                 res.append(matrix[x][right])
             right -= 1
-            if left <= right:
+            if top <= bottom: # print bottom, this check to make sure there is still bottom element to print
                 for x in range(right, left - 1, -1):
                     res.append(matrix[bottom][x])
                 bottom -= 1
-            if bottom >= top:
+            if left <= right: #print left, this check to make sure there is still left element to print
                 for x in range(bottom, top - 1, -1):
                     res.append(matrix[x][left])
                 left += 1

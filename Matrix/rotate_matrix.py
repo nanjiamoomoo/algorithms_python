@@ -47,3 +47,27 @@ class Solution:
             right -= 1
             left += 1
         return
+    
+    """
+        another method:
+        first transpose:
+        then do row reverse
+
+        if not matrix:
+            return
+        n = len(matrix)
+        def transpose(matrix:list[list]) -> None:
+            for x in range(n):
+                for y in range(x, n):
+                    matrix[x][y], matrix[y][x] = matrix[y][x], matrix[x][y]
+        def reverserows(matrix:list[list])-> None:
+            for x in range(n):
+                left, right = 0, n - 1
+                while left < right:
+                    matrix[x][left], matrix[x][right] = matrix[x][right], matrix[x][left]
+                    left += 1
+                    right -= 1
+        transpose(matrix)
+        reverserows(matrix)
+                
+    """
