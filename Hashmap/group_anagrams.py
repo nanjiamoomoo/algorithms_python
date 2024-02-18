@@ -27,6 +27,7 @@ strs[i] consists of lowercase English letters.
 """
 class Solution:
     def group_anagrams(self, strs: list) -> list[list]:
+        #this solution is crazy
         mp = {}
         res = []
 
@@ -38,6 +39,16 @@ class Solution:
                 mp[sorted_s] = len(res)
                 res.append([s])
         return res
+    
+    """
+        anagram_map = defaultdict(list)
+        
+        for word in strs:
+            sorted_word = ''.join(sorted(word))
+            anagram_map[sorted_word].append(word)
+        
+        return list(anagram_map.values())
+    """
 
         # res = []
         # if len(strs) == 1:
