@@ -41,6 +41,7 @@ class Solution:
     def simplifyPath(self, path: str) -> str:
         #step1: we split the abolute path by /
         l = re.split("/+", path)
+        #or l = path.split("/")
 
         """
             now we use a stack to solve the issue
@@ -51,12 +52,12 @@ class Solution:
         stack = []
         for x in l:
             if x == "..":
-                if not stack:
-                    stack.pop()
-            elif x != ".":
+                if stack:
+                    stack.pop()                    
+            elif x != "." and x != "":
                 stack.append(x)
-
-        return "/".join(stack)
+        
+        return "/" + "/".join(stack)
     
 if __name__=="__main__":
     txt = ["home"]
